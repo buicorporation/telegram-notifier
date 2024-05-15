@@ -1,0 +1,22 @@
+name: 'Github Notification Telegram'
+
+description: 'Adds pull request file changes as a comment to a newly opened PR'
+
+author: 'Buicorporation'
+
+inputs:
+  telegram_token:
+    description: 'Telegram token'
+    required: true
+
+  telegram_chat_id:
+    description: 'Telegram chart ID'
+    required: true
+
+  telegram_message_thread_id:
+    description: 'Topic message ID'
+    required: false
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

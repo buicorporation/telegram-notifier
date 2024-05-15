@@ -1,0 +1,19 @@
+name: Metadata
+
+on:
+  pull_request:
+    types: [opened, reopened, review_requested, closed]
+
+jobs:
+  annotate-pr:
+    runs-on: ubuntu-latest
+
+    name: Annotates pull request with metadata
+
+    steps:
+      - name: Annotate PR
+        uses: buicorporation/github-notification@main
+        with:
+          telegram_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          telegram_message_thread_id: 203
