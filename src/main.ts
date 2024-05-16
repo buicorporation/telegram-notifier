@@ -51,17 +51,17 @@ const formatMessage = (payload: PullRequestEvent): string => {
     const reviewerName = escapeMarkdown(reviewer);
 
     message = `
-    📝  *Review Request*  \\\#${number} \\\- [${ownerName}/${repoName}]\(https://github.com/${ownerName}/${repoName}/pull/${number}\)
- 
-    *Title:* ${prTitle}
-    *Opened By:* [${senderName}](https://github.com/${senderName})
-    *Reviewer:* [${reviewerName}](https://github.com/${reviewerName})
-    
-    Pull Request updated with:
-    \\\- ${changed_files} changes
-    \\\- ${additions} additions
-    \\\- ${deletions} deletions
-  `;
+📝  *Review Request*  \\\#${number} \\\- [${ownerName}/${repoName}]\(https://github.com/${ownerName}/${repoName}/pull/${number}\)
+
+*Title:* ${prTitle}
+*Opened By:* [${senderName}](https://github.com/${senderName})
+*Reviewer:* [${reviewerName}](https://github.com/${reviewerName})
+
+Pull Request updated with:
+\\\- ${changed_files} changes
+\\\- ${additions} additions
+\\\- ${deletions} deletions
+`;
 
     console.debug('Message: ', message);
 
@@ -70,16 +70,16 @@ const formatMessage = (payload: PullRequestEvent): string => {
 
   if (action === 'opened') {
     message = `
-    🔄 *Pull Request* \\\#${number} \\\- [${ownerName}/${repoName}]\(https://github.com/${ownerName}/${repoName}/pull/${number}\)
- 
-    *Title:* ${prTitle}
-    *Opened By:* [${senderName}](https://github.com/${senderName})
-    
-    Pull Request updated with:
-    \\\- ${changed_files} changes
-    \\\- ${additions} additions
-    \\- ${deletions} deletions
-  `;
+🔄 *Pull Request* \\\#${number} \\\- [${ownerName}/${repoName}]\(https://github.com/${ownerName}/${repoName}/pull/${number}\)
+
+*Title:* ${prTitle}
+*Opened By:* [${senderName}](https://github.com/${senderName})
+
+Pull Request updated with:
+\\\- ${changed_files} changes
+\\\- ${additions} additions
+\\- ${deletions} deletions
+`;
 
     console.debug('Message: ', message);
 
